@@ -9,8 +9,7 @@
 * Consolidates protocols
 * Hex and rebar support
 * Caching of Hex packages, Mix dependencies and downloads
-* Pre & Post compilation hooks through `hook_pre_compile`, `hook_post_compile` configuration
-
+* Compilation procedure hooks through `hook_pre_compile`, `hook_compile`, `hook_post_compile` configuration
 
 #### Version support
 
@@ -77,6 +76,8 @@ hook_pre_fetch_dependencies="pwd"
 
 # A command to run right before compiling the app (after elixir, .etc)
 hook_pre_compile="pwd"
+
+hook_compile="mix compile --force --warnings-as-errors"
 
 # A command to run right after compiling the app
 hook_post_compile="pwd"

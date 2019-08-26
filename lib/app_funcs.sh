@@ -98,7 +98,13 @@ function compile_app() {
 
   cd $build_path
   output_section "Compiling"
-  mix compile --force || exit 1
+
+  if [ -n "$hook_compile" ]; then
+     output_section "(using custom compile comand)"
+     $hook_compile || exit 1
+  else
+     mix compile --force || exit 1
+  fi
 
   mix deps.clean --unused
 
