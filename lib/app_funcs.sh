@@ -100,7 +100,7 @@ function compile_app() {
   output_section "Compiling"
 
   if [ -n "$hook_compile" ]; then
-     output_section "(using custom compile comand)"
+     output_section "(using custom compile command)"
      $hook_compile || exit 1
   else
      mix compile --force || exit 1
