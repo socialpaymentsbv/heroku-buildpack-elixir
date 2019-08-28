@@ -50,7 +50,10 @@ The above method always uses the latest version of the buildpack code. To use a 
 
 #### Using Heroku CI
 
-This buildpack supports Heroku CI. To enable viewing test runs on Heroku, add [tapex](https://github.com/joshwlewis/tapex) to your project.
+This buildpack supports Heroku CI. 
+
+* To enable viewing test runs on Heroku, add [tapex](https://github.com/joshwlewis/tapex) to your project.
+* To detect compilation warnings use the `hook_compile` configuration option set to `mix compile --force --warnings-as-errors`.
 
 ## Configuration
 
